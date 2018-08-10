@@ -17,7 +17,7 @@
 namespace me {
 
     //% block
-    export function helloWorldmezh1024() {
+    export function helloWorldmezh() {
 
     }
 

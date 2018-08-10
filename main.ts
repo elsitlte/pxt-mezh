@@ -240,7 +240,7 @@ namespace me {
     export function StepperTurn(index: Steppers, turn: Turns): void {
         let degree = turn;
         StepperDegree(index, degree);
-    }	
+    }    
 
     //% blockId=robotbit_motor_run block="Motor|%index|speed %speed"
     //% weight=85

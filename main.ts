@@ -15,17 +15,6 @@
  */
 //% color="#AAc044" icon="\uf135" block="Me"
 namespace me {
-
-    //% block
-    export function helloWorldmezhbak() {
-
-    }
-
-    //% block
-    export function hello() {
-
-    }
-
     const PCA9685_ADDRESS = 0x40
     const MODE1 = 0x00
     const MODE2 = 0x01
@@ -83,9 +72,9 @@ namespace me {
     }
 
     export enum Steppers {
-        //% blockId="Step_1" block="Stddep 1"
+        //% blockId="Step_1" block="Step 1"
         Step_1 = 0x1,
-        //% blockId="Step_2" block="Steddp 2"
+        //% blockId="Step_2" block="Step 2"
         Step_2 = 0x2
     }
 

@@ -1,10 +1,10 @@
 {
-  "me.MotorRun|block": "µç»ú %index|ËÙ¶È %speed",
-  "me.MotorStopAll|block": "Í£Ö¹ËùÓĞµç»ú",
-  "me.MotorStop|block": "Í£Ö¹µç»ú %index|",
-  "me.Servo|block": "¶æ»ú %index|×ª¶¯ÖÁ½Ç¶È %degree",
-  "me.StepperDegree|block": "²½½øµç»ú %index|×ª¶¯ÖÁ½Ç¶È %degree",
-  "me.StepperTurn|block": "²½½øµç»ú %index|×ª¶¯È¦Êı %turn",
+  "me.MotorRun|block": "ç”µæœº %index|é€Ÿåº¦ %speed",
+  "me.MotorStopAll|block": "åœæ­¢æ‰€æœ‰ç”µæœº",
+  "me.MotorStop|block": "åœæ­¢ç”µæœº %index|",
+  "me.Servo|block": "èˆµæœº %index|è½¬åŠ¨è‡³è§’åº¦ %degree",
+  "me.StepperDegree|block": "æ­¥è¿›ç”µæœº %index|è½¬åŠ¨è‡³è§’åº¦ %degree",
+  "me.StepperTurn|block": "æ­¥è¿›ç”µæœº %index|è½¬åŠ¨åœˆæ•° %turn",
   "me.Steppers.Step_1|block": "Step 1",
   "me.Steppers.Step_2|block": "Step 2",  
   "me.Turns.T1B0|block": "1",
@@ -14,6 +14,6 @@
   "me.Turns.T3B0|block": "3",
   "me.Turns.T4B0|block": "4",
   "me.Turns.T5B0|block": "5",
-  "me|block": "ÎÒMe",
+  "me|block": "æˆ‘Me",
   "{id:category}Me": "Me"
 }

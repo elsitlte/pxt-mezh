@@ -19,6 +19,7 @@ namespace me {
     export function helloxx() {
 
     }
+    //% block
     export function hellovv() {
 
     }

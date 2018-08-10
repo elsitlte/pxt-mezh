@@ -19,6 +19,9 @@ namespace me {
     export function helloxx() {
 
     }
+    export function hellovv() {
+
+    }
     const PCA9685_ADDRESS = 0x40
     const MODE1 = 0x00
     const MODE2 = 0x01
@@ -98,12 +101,12 @@ namespace me {
         //% blockId="T5B0" block="5"
         T5B0 = 1800
     }
-    
+
     export enum Directions {
-       Forward,
-       Backward        
+        Forward,
+        Backward
     }
-    
+
     let initialized = false
     let initializedMatrix = false
 
@@ -133,7 +136,7 @@ namespace me {
         i2cwrite(PCA9685_ADDRESS, MODE1, 0x00)
         setFreq(50);
         for (let idx = 0; idx < 16; idx++) {
-            setPwm(idx, 0 ,0);
+            setPwm(idx, 0, 0);
         }
         initialized = true
     }
@@ -221,7 +224,7 @@ namespace me {
         let value = v_us * 4096 / 20000
         setPwm(index + 7, 0, value)
     }
-    
+
     //% blockId=robotbit_stepper_degree block="Stepper %index|degree %degree"
     //% weight=90
     export function StepperDegree(index: Steppers, degree: number): void {
@@ -240,7 +243,7 @@ namespace me {
     export function StepperTurn(index: Steppers, turn: Turns): void {
         let degree = turn;
         StepperDegree(index, degree);
-    }    
+    }
 
     //% blockId=robotbit_motor_run block="Motor %index|speed %speed"
     //% weight=85

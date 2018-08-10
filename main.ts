@@ -17,7 +17,7 @@
 namespace me {
 
     //% block
-    export function helloWorldmezh() {
+    export function helloWorldmezhbak() {
 
     }
 
@@ -78,7 +78,9 @@ namespace me {
     }
 
     export enum Steppers {
+        //% blockId="Step_1" block="Step 1"
         Step_1 = 0x1,
+        //% blockId="Step_2" block="Step 2"
         Step_2 = 0x2
     }
 

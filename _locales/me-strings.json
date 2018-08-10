@@ -5,6 +5,8 @@
   "me.Servo|block": "Servo|%index|degree %degree",
   "me.StepperDegree|block": "Stepper|%index|degree %degree",
   "me.StepperTurn|block": "Stepper|%index|turn %turn",
+  "me.Steppers.Step_1|block": "Step 1",
+  "me.Steppers.Step_2|block": "Step 2",
   "me.Turns.T1B0|block": "1",
   "me.Turns.T1B2|block": "1/2",
   "me.Turns.T1B4|block": "1/4",
@@ -12,7 +14,7 @@
   "me.Turns.T3B0|block": "3",
   "me.Turns.T4B0|block": "4",
   "me.Turns.T5B0|block": "5",
-  "me.helloWorldmezh1024|block": "hello worldmezh1024",
+  "me.helloWorldmezhbak|block": "hello worldmezhbak",
   "me|block": "Me",
   "{id:category}Me": "Me"
 }

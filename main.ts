@@ -15,6 +15,12 @@
  */
 //% color="#AAc044" icon="\uf135" block="Me"
 namespace me {
+
+    //% block
+    export function helloWorldmezh() {
+
+    }
+
     const PCA9685_ADDRESS = 0x40
     const MODE1 = 0x00
     const MODE2 = 0x01

@@ -287,13 +287,13 @@ namespace magibit {
       this.dhtSet(1);
     }
 
-    dhtReadAck():number {
+    dhtReadAck() {
       if(this.whileGet(1) === 1)
-        return 11;//return 1
+        return 1;//return 1
       if(this.whileGet(0) === 1)
-        return 22;//return 1
+        return 1;//return 1
       if(this.whileGet(1) === 1)
-        return 33;//return 1
+        return 1;//return 1
 
       return 0;
     }
@@ -301,10 +301,12 @@ namespace magibit {
     whileGet(value:number):number {
       let time_out:number = 0;
       let TIME_TH:number = 10000;
+      let time_start = control.eventTimestamp();
       while((value === this.dhtGet()) && (time_out < TIME_TH)) {
         time_out ++;
       }
-
+      this.Temperature = control.eventTimestamp() - time_start;
+      this.Humidity = time_out;
       if(time_out === TIME_TH)
         return 1;
       else
@@ -313,7 +315,7 @@ namespace magibit {
 
     dhtReadOneBit() {
       this.whileGet(0);
-      this.delay_us(60);
+      this.delay_us(50);
       this.bt <<= 1;
       if(1===this.dhtGet()){
         this.bt |= 1;
@@ -362,9 +364,8 @@ namespace magibit {
       let T_L = 0;
 
       this.dhtStart();
-      // if(this.dhtReadAck() === 1)
-      //   return 0;
-      this.Humidity=this.dhtReadAck();
+      if(this.dhtReadAck() === 1)
+        return 0;
          
       this.dhtReadOneByte();
       R_H = this.bt;
@@ -380,15 +381,16 @@ namespace magibit {
       if(CHECKSUM === R_H+R_L+T_H+T_L){
         this.Humidity = R_H;
         this.Temperature = T_H;
-        return 0;
+        return 1;
       }
       else
-        return 1;
+        return 0;
     }
 
     getTemperature():number {
       if (this.currentTem === -99){
-        this.dhtGetHt();
+        this.dhtStart();
+        this.whileGet(1);
         this.currentTem = this.Temperature;
       }
       return this.Temperature;
@@ -398,8 +400,8 @@ namespace magibit {
       if (this.currentTem === -99){
         //this.dhtGetHt();
         this.dhtStart();
-        //this.currentTem = this.Temperature;
-        return this.Humidity=33;
+        this.whileGet(1);
+        this.currentTem = this.Temperature;
       }
       return this.Humidity;
     }

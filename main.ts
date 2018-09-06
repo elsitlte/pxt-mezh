@@ -379,24 +379,37 @@ namespace magibit {
     }
 
     getTemperature():number {
-      //if (this.currentTem === -99){
         this.dhtSet(1);
         this.delay_us(60);
         this.dhtSet(0);
         this.wait_ms(25);
         this.dhtSet(1);
-        this.whileGet(1);
-        this.whileGet(0);
-        //this.currentTem = this.Temperature;
-      //}
+        let start = input.runningTimeMicros();  
+        switch (this.pin) {
+          case AirSensorPins.P0:
+            pins.setPull(DigitalPin.P0, PinPullMode.PullUp);
+            pins.digitalReadPin(DigitalPin.P0);
+            break;
+          case AirSensorPins.P1:
+            pins.setPull(DigitalPin.P1, PinPullMode.PullUp);
+            pins.digitalReadPin(DigitalPin.P1);
+            break;
+          case AirSensorPins.P2:
+            pins.setPull(DigitalPin.P2, PinPullMode.PullUp);
+            pins.digitalReadPin(DigitalPin.P2);
+            break;
+        }
+        this.Temperature = input.runningTimeMicros()-start;
+
       return this.Temperature;
     }
 
     getHumidity():number {
         this.dhtStart();
-        let start=input.runningTimeMicros();  
-        this.dhtSet(0);
-        this.Humidity=input.runningTimeMicros()-start;
+        let start = input.runningTimeMicros();  
+          pins.setPull(DigitalPin.P2, PinPullMode.PullUp);
+          pins.digitalReadPin(DigitalPin.P2);
+        this.Humidity = input.runningTimeMicros()-start;
        
       return this.Humidity;
     }
